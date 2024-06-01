@@ -1,0 +1,5 @@
+<div class="d-flex align-items-center justify-content-between gap-1" [class.gap-4]="greatBox">
+    @for (color of colors; track $index) {
+        <div class="color-sqr" [class]="color" [ngClass]="{'great-box': greatBox}"></div>
+    }
+</div>

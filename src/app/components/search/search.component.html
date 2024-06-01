@@ -1,0 +1,4 @@
+<div>
+    <input type="text" class="rounded-3 p-4" 
+    [(ngModel)]="searchValue" (ngModelChange)="this.searchValue$.next($event)" [placeholder]="'Search ' + type">
+</div>

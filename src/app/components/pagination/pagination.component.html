@@ -1,0 +1,22 @@
+@if(paginationData && paginationData.length) {
+    <nav aria-label="..." class="pt-4">
+        <ul class="pagination">
+            <li class="page-item pointer" [class.disabled]="currentPage < 2">
+                <span class="page-link" (click)="changePage('-')">
+                    <fa-icon class="navbar-icon" [icon]="faArrowLeft"></fa-icon>
+                </span>
+            </li>
+            <li class="page-item pointer">
+                <span class="page-link">
+                    {{ currentPage }} of {{ paginationData.length }}
+                </span>
+            </li>
+
+            <li class="page-item pointer" [class.disabled]="currentPage >= paginationData.length">
+                <a class="page-link" (click)="changePage('+')">
+                    <fa-icon class="navbar-icon" [icon]="faArrowRight"></fa-icon>
+                </a>
+            </li>
+        </ul>
+    </nav>
+}

@@ -1,0 +1,27 @@
+<div class="p-4 d-flex gap-5 user-card justify-content-around align-items-start">
+    @if (user) {
+    <div class="card p-5 d-flex flex-column align-items-center">
+        <img src="../../../assets/images/user-icon.jpg" alt="user icon">
+        <h5 class="mt-5">{{ user.name }}</h5>
+        <p>{{ user.username }}</p>
+    </div>
+    <div>
+        <p class="text-bold">User information</p>
+        <div>
+            <p>Phone: {{ user.phone }}</p>
+            <p>Email: {{ user.email }}</p>
+        </div>
+        <p class="text-bold">Address</p>
+        <div>
+            <p>Name: {{ user.company.name }}</p>
+            <p>About: {{ user.company.catchPhrase }}</p>
+        </div>
+        <p class="text-bold">Company</p>
+        <div>
+            <p>City: {{ user.address.city }}</p>
+            <p>Street: {{ user.address.street }} {{ user.address.suite }}</p>
+            <p>Zip Code: {{ user.address.zipcode }}</p>
+        </div>
+    </div>
+    }
+</div>

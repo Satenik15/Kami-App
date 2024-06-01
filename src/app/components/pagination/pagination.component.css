@@ -1,0 +1,14 @@
+.page-link {
+    color: #44637f;
+}
+
+.active > .page-link,
+.page-link.active {
+    border-color: #44637f;
+    background-color: #44637f;
+    color: #ffffff;
+}
+
+.page-item.disabled {
+    cursor: auto;
+}

@@ -1,0 +1,27 @@
+<div class="p-4">
+    <h5 class="mb-5">Album List</h5>
+    <div class="d-flex align-items-lg-center flex-column flex-lg-row gap-4 pb-5">
+        <app-search type="album" [searchValue]="searchValue" (updateValue)="getFilteredAlbums($event)"></app-search>
+        <app-select [items]="sortParams" [selectedItem]="selectedItem" (onSelect)="onSort($event)"></app-select>
+    </div>
+    <div class="album-wrapper d-grid">
+        @for (album of albumsCopy | slice : startItem : startItem + 10; track $index) {
+        <div class="card rounded-3 border-0 d-flex flex-column justify-content-between gap-2 p-4 text-decoration-none">
+            <p>{{ album.title }}</p>
+            <div class="d-flex flex-column gap-3">
+                <app-album-card></app-album-card>
+                <div class="d-flex align-items-center justify-content-end gap-2">
+                    <a [routerLink]="['/album', album.id]">
+                        <fa-icon class="folder-icon" [icon]="faFolderOpen"></fa-icon>
+                    </a>
+                    <app-user-card [id]="album.userId"></app-user-card>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    @if(albumsCopy && albumsCopy.length > 0) {
+    <app-pagination [pagesLength]="albumsCopy.length" [currentPage]="startItem / 10 + 1"
+        (onChangePage)="onPaginate($event)"></app-pagination>
+    }
+</div>

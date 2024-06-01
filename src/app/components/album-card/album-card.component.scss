@@ -1,0 +1,29 @@
+.color-sqr {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+
+    &.puprle {
+        background-color: #771796;
+    }
+
+    &.pink {
+        background-color: #F66B97;
+    }
+
+    &.blue {
+        background-color: #56A8C2;
+    }
+
+    &.great-box {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .color-sqr.great-box {
+        width: 40px;
+        height: 40px;
+    }
+}

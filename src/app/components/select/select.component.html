@@ -1,0 +1,5 @@
+<ng-select class="rounded-3 pb-0" placeholder="Sort By" [(ngModel)]="selectedItem" (ngModelChange)="onSelect.emit(selectedItem)">
+    @for (item of items; track $index) {
+    <ng-option [value]="item">{{ item.key || item.name }} {{ item.value === Sort.DESC ? 'A - Z' : 'Z - A' }}</ng-option>
+    }
+</ng-select>

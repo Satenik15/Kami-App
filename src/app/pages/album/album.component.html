@@ -1,0 +1,11 @@
+@if(album) {
+    <div class="d-flex align-items-center justify-content-center w-100 pt-5">
+        <div class="d-flex flex-column align-items-center justify-content-center p-4 card m-4">
+            <div class="d-flex align-items-center justify-content-end w-100">
+                <app-user-card [id]="album.userId"></app-user-card>
+            </div>
+            <h4 class="mb-5 mt-3 text-center">{{ album.title }}</h4>
+            <app-album-card [greatBox]="true"></app-album-card>
+        </div>
+    </div>
+}
