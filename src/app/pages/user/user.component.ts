@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subject, filter, switchMap, takeUntil } from 'rxjs';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { UserService } from '../../services/user-service/user.service';
 import { HelperService } from '../../services/helper-service/helper.service';
 import { IUser } from '../../models/user';
@@ -8,7 +10,7 @@ import { IUser } from '../../models/user';
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [],
+  imports: [FontAwesomeModule],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })
@@ -19,6 +21,7 @@ export class UserComponent implements OnInit, OnDestroy {
   
   destroy$: Subject<void> = new Subject();
   user!: IUser;
+  faUser = faUser;
 
   ngOnInit(): void {
     this.helperService.updateCurrentPage('User');

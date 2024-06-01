@@ -1,7 +1,7 @@
-<div class="p-4 d-flex gap-5 user-card justify-content-around align-items-start">
+<div class="p-4 d-flex flex-column flex-md-row gap-5 user-card justify-content-around align-items-center align-items-md-start">
     @if (user) {
     <div class="card p-5 d-flex flex-column align-items-center">
-        <img src="../../../assets/images/user-icon.jpg" alt="user icon">
+        <fa-icon class="user-icon" [icon]="faUser"></fa-icon>
         <h5 class="mt-5">{{ user.name }}</h5>
         <p>{{ user.username }}</p>
     </div>
