@@ -90,6 +90,7 @@ export class AlbumListComponent implements OnInit, OnDestroy {
             if (data['page']) {
               this.updateRouting(data['page']);
               this.startItem = (+data['page'] - 1) * this.limit;
+              console.log(this.startItem)
             } else {
               this.updateRouting(1);
             }
@@ -115,6 +116,8 @@ export class AlbumListComponent implements OnInit, OnDestroy {
   getFilteredAlbums(text: string, updateRoutingValue = true) {
     const routParams = { search: text ? text : '' };
     this.albumsCopy = this.filterService.onFilterData(this.albums, text, 'title');
+    this.updateRouting(1);
+    this.startItem = 0;
 
     if (updateRoutingValue) {
       this.routerService.updateRouting(routParams);
